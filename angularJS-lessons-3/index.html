@@ -10,12 +10,46 @@
 <body>
 
 <div ng-app="">
-    <div ng-controller="firstController">
-        <h2>{{data.message}}</h2>
+    <input type="text" ng-model="message"/>
 
-        <div class="{{data.message}}">{{data.message}}</div>
+    <h1>{{message}}</h1>
+
+    <!--İkinci controller kapsamındadır işlemler-->
+    <div ng-controller="firstController">
+        <input type="text" ng-model="message"/>
+
+        <h1>{{message}}</h1>
     </div>
-</div>
+
+    <!--Üçüncü controller kapsamındadır işlemler-->
+    <div ng-controller="secondController">
+        <input type="text" ng-model="message"/>
+
+        <h1>{{message}}</h1>
+    </div>
+    <p>That bind evrywhere, değer her yere bağladık</p>
+
+    <div ng-app="">
+        <input type="text" ng-model="data.message"/>
+
+        <h3>{{data.message}}</h3>
+
+        <!--İkinci controller kapsamındadır işlemler-->
+        <div ng-controller="firstController">
+            <input type="text" ng-model="data.message"/>
+
+            <h1>{{data.message}}</h1>
+        </div>
+
+        <!--Üçüncü controller kapsamındadır işlemler-->
+        <div ng-controller="secondController">
+            <input type="text" ng-model="data.message"/>
+
+            <h1>{{data.message}}</h1>
+        </div>
+
+
+    </div>
 
 
 </body>
