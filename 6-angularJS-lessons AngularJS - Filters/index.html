@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css"/>
+
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div ng-app="myApp">
+    <!--İkinci controller kapsamındadır işlemler-->
+    <div ng-controller="firstController">
+        <input type="text" ng-model="data.message"/>
+
+        <h1>{{data.message}}</h1>
+    </div>
+
+    <!--Üçüncü controller kapsamındadır işlemler-->
+    <div ng-controller="secondController">
+        <input type="text" ng-model="data.message"/>
+
+        <h1>{{data.message|reverse}} </h1>
+    </div>
+
+</div>
+
+</body>
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>
